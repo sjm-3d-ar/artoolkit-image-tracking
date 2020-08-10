@@ -30,6 +30,12 @@ var markers = {
         height: 2048,
         dpi: 215,
         url: "markers/pinball/pinball"
+    },
+    greenlight: {
+        width: 1000,
+        height: 607,
+        dpi: 300,
+        url: "markers/greenlight/greenlight"
     }
 };
 
