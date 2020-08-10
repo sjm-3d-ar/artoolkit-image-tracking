@@ -98,8 +98,12 @@ function start( container, marker, video, input_width, input_height, canvas_draw
     threeGLTFLoader.load("models/Flamingo.glb", function (gltf) {
             model = gltf.scene.children[0];
             model.position.z = 0;
-            model.position.x = 100;
-            model.position.y = 100;
+            model.position.x = 50;
+            model.position.y = 50;
+
+            model.scale.z = 0.5;
+            model.scale.x = 0.5;
+            model.scale.y = 0.5;
 
             var animation = gltf.animations[0];
             var mixer = new THREE.AnimationMixer(model);
