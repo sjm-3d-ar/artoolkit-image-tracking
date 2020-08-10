@@ -29,7 +29,7 @@ var markers = {
         width: 1637,
         height: 2048,
         dpi: 215,
-        url: "../examples/DataNFT/pinball"
+        url: "markers/pinball/pinball"
     }
 };
 
@@ -53,7 +53,7 @@ function start( container, marker, video, input_width, input_height, canvas_draw
     var pw, ph;
     var ox, oy;
     var worker;
-    var camera_para = "./../examples/Data/camera_para-iPhone 5 rear 640x480 1.0m.dat";
+    var camera_para = "Data/camera_para.dat";
 
     var canvas_process = document.createElement("canvas");
     var context_process = canvas_process.getContext("2d");
@@ -89,7 +89,7 @@ function start( container, marker, video, input_width, input_height, canvas_draw
     /* Load Model */
     var threeGLTFLoader = new THREE.GLTFLoader();
 
-    threeGLTFLoader.load("../Data/models/Flamingo.glb", function (gltf) {
+    threeGLTFLoader.load("models/Flamingo.glb", function (gltf) {
             model = gltf.scene.children[0];
             model.position.z = 0;
             model.position.x = 100;
@@ -136,7 +136,7 @@ function start( container, marker, video, input_width, input_height, canvas_draw
 
         renderer.setSize(sw, sh);
 
-        worker = new Worker("../../js/artoolkit.worker.js");
+        worker = new Worker("artoolkit.worker.js"); // NOTE: if moving this to a different folder, 'Worker' make look for files relative to the location
 
         worker.postMessage({
             type: "load",
